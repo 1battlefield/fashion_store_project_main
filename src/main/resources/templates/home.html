@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <title>Fashion Store</title>
+  </head>
+  <body>
+    <h1>Chào mừng bạn đến với Fashion Store!</h1>
+    <p>Bạn đã đăng nhập thành công.</p>
+
+    <h2>Thanh toán đơn hàng</h2>
+    <p>Quét mã QR để thanh toán 50,000 VND</p>
+    <img id="qr-code" src="" alt="QR Code Thanh toán" />
+
+    <script>
+      // Gọi API để lấy mã QR và hiển thị
+      const amount = 50000;
+      const bank = "MBBank"; // Thay bằng ngân hàng của bạn
+      const accountNo = "0123456789"; // Thay bằng STK của bạn
+      const info = "Thanh toan don hang 456";
+
+      const qrCodeImg = document.getElementById("qr-code");
+      qrCodeImg.src = `/api/payment/qr-code?bank=${bank}&accountNo=${accountNo}&amount=${amount}&info=${info}`;
+    </script>
+  </body>
+</html>
